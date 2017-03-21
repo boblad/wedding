@@ -12,7 +12,7 @@
       <img class="back" src="engaged.png">
       <div class="timeWrap">
         <h1 id="time" class="current">00:00:00</h1>
-        <p class="third">D --- H --- M</p>
+        <p class="third">D --- H --- M --- S</p>
       </div>
     </div>
   </body>
@@ -64,7 +64,7 @@ z-index: -1;
   }
 
   .timeWrap {
-    width: 300px;
+    width: 330px;
     padding: 20px;
     background: #ea8e72;
     border-radius: 10px;
@@ -107,13 +107,15 @@ z-index: -1;
 
     if (days < 10) days = '0' + days.toString();
     if (hrs < 10) hrs = '0' + hrs.toString();
+    if (min < 10) min = '0' + min.toString();
     if (leftSec < 10) leftSec = '0' + leftSec.toString();
 
     days = days.toString();
     hrs = hrs.toString();
+    min = min.toString();
     leftSec = leftSec.toString();
 
-    var time = days + " : " + hrs + " : " + leftSec
+    var time = days + " : " + hrs + " : " + min + " : " + leftSec
     document.getElementById('time').innerHTML = time;
   }, 100);
   </script>
