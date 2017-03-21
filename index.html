@@ -8,7 +8,8 @@
   </head>
   <body>
     <div class="wrap">
-      <img class="back" src="https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-9/14199510_1409393672421926_7913601645639439326_n.jpg?oh=65cbd9c2e899d95ccd255cb2aeca6ad8&oe=596B6389">
+      <img class="falls" src="http://millenialfalls.com/wp-content/uploads/2016/06/backyard2008.jpg">
+      <img class="back" src="engaged.png">
       <div class="timeWrap">
         <h1 id="time" class="current">00:00:00</h1>
         <p class="third">D --- H --- M</p>
@@ -20,13 +21,28 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+        font-family: fantasy;
+  }
+
+  .falls {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+z-index: -1;
   }
 
   .third {
     width: 50%;
     text-align: center;
     margin: 0 auto;
-    color: #888686;
+    color: white;
+  }
+
+  .land-clear:before,
+  .land-clear:after {
+    content: " ";
+    display: table;
   }
 
   .wrap {
@@ -34,13 +50,17 @@
     float: left;
     height: 100vh;
     position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
   }
 
   .current {
     width: 100%;
     float: left;
     text-align: center;
-    color: #888686;
+    color: white;
   }
 
   .timeWrap {
@@ -49,15 +69,22 @@
     background: #ea8e72;
     border-radius: 10px;
     border: 5px solid #32a0f7;
-    position: absolute;
-    left: calc(50% - 150px);
-    top: calc(50% - 27px);
+    /*position: absolute;*/
+    /*left: calc(50% - 150px);*/
+    /*top: calc(50% - 27px);*/
   }
 
   .back {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
+    /*position: absolute;*/
+  width: 230px;
+  height: 320px;
+  border-radius: 54px;
+  border: 5px solid #32a0f7;
+  /*left: calc(50% - 115px);*/
+  /*bottom: calc(50% + 35px);*/
+  background: white;
+}
+
   }
   </style>
   <script>
