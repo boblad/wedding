@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bryant and Anna</title>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <img class="back" src="https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-9/14199510_1409393672421926_7913601645639439326_n.jpg?oh=65cbd9c2e899d95ccd255cb2aeca6ad8&oe=596B6389">
+      <div class="timeWrap">
+        <h1 id="time" class="current">00:00:00</h1>
+        <p class="third">D --- H --- M</p>
+      </div>
+    </div>
+  </body>
+  <style>
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  .third {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    color: #888686;
+  }
+
+  .wrap {
+    width: 100%;
+    float: left;
+    height: 100vh;
+    position: relative;
+  }
+
+  .current {
+    width: 100%;
+    float: left;
+    text-align: center;
+    color: #888686;
+  }
+
+  .timeWrap {
+    width: 300px;
+    padding: 20px;
+    background: #ea8e72;
+    border-radius: 10px;
+    border: 5px solid #32a0f7;
+    position: absolute;
+    left: calc(50% - 150px);
+    top: calc(50% - 27px);
+  }
+
+  .back {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
+  </style>
+  <script>
+
+  var d = new Date();
+
+  window.setInterval(function() {
+    var a = new Date(2017, 6, 1, 23, 59, 59)
+
+    diff = Math.abs(Math.floor((a - new Date())/1000));
+
+    var days = Math.floor(diff/(24*60*60));
+    var leftSec = diff - days * 24*60*60;
+
+    var hrs = Math.floor(leftSec/(60*60));
+    leftSec = leftSec - hrs * 60*60;
+
+    var min = Math.floor(leftSec/(60));
+    leftSec = leftSec - min * 60;
+
+    if (days < 10) days = '0' + days.toString();
+    if (hrs < 10) hrs = '0' + hrs.toString();
+    if (leftSec < 10) leftSec = '0' + leftSec.toString();
+
+    days = days.toString();
+    hrs = hrs.toString();
+    leftSec = leftSec.toString();
+
+    var time = days + " : " + hrs + " : " + leftSec
+    document.getElementById('time').innerHTML = time;
+  }, 100);
+  </script>
+</html>
